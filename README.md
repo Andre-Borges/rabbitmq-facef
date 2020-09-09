@@ -1,6 +1,6 @@
 # RabbitMQ Facef
 
-- Módulo Mensagerias com RabbitMQ - Uni-FACEF.
+- Módulo de Mensagerias com RabbitMQ - Uni-FACEF.
 
 ### Comandos
 
