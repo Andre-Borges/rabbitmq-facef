@@ -39,3 +39,4 @@ mvn spring-boot:run
 - https://maven.apache.org/install.html
 - https://chocolatey.org/install
 - https://brew.sh/index_pt-br
+- https://sdkman.io/
