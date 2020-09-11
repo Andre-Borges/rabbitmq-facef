@@ -1,4 +1,7 @@
 package br.com.facef.rabbitmqdlq.business;
 
-public class MensagemBusiness {
+import br.com.facef.rabbitmqdlq.model.Mensagem;
+
+public interface MensagemBusiness {
+    Mensagem save(Mensagem mensagem);
 }

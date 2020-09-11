@@ -4,11 +4,18 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "message")
-public class Message {
+public class Mensagem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String mensagem;
+
+    public Mensagem() {
+    }
+
+    public Mensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
 
     public int getId() {
         return id;

@@ -21,8 +21,7 @@ public class MessageProducer {
     this.rabbitTemplate.convertAndSend(
         DIRECT_EXCHANGE_NAME,
         ORDER_MESSAGES_QUEUE_NAME,
-        "FAKE-MESSAGE-"
-            .concat(LocalDateTime.now().toString())
-            .concat(UUID.randomUUID().toString()));
+        "FAKE-MESSAGE: "
+            .concat("RabbitMq Uni-Facef"));
   }
 }
