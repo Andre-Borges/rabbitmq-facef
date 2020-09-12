@@ -6,8 +6,9 @@
 
 ```
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-http://localhost:15672/
-guest/guest
+
+docker-compose stop && docker-compose rm -f && docker-compose up -d 
+http://localhost:15672/ -> guest/guest
 
 microk8s helm3 install rabbitmq stable/rabbitmq
 echo "Password      : $(kubectl get secret --namespace default rabbitmq -o jsonpath="{.data.rabbitmq-password}" | base64 --decode)"
