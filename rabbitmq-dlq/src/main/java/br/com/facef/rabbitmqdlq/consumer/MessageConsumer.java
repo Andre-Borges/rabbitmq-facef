@@ -73,7 +73,6 @@ public class MessageConsumer {
         log.info("Mensagem recebida na fila Parking Lot: {}", new String(message.getBody()));
         Mensagem mensagem = new Mensagem(new String(message.getBody()));
         mensagemBusiness.save(mensagem);
-        return;
     }
 
 }
