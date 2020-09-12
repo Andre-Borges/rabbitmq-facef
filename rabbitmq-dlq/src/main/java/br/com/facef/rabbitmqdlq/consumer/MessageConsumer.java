@@ -24,6 +24,11 @@ public class MessageConsumer {
     private MensagemBusiness mensagemBusiness;
 
     @Autowired
+    public MessageConsumer (MensagemBusiness mensagemBusiness) {
+        this.mensagemBusiness = mensagemBusiness;
+    };
+
+    @Autowired
     private RabbitTemplate rabbitTemplate;
 
     @RabbitListener(queues = DirectExchangeConfiguration.ORDER_MESSAGES_QUEUE_NAME)
@@ -66,8 +71,9 @@ public class MessageConsumer {
     @RabbitListener(queues = DirectExchangeConfiguration.ORDER_MESSAGES_QUEUE_PARKING_LOT_NAME)
     public void processOrderMessageParkingLot(Message message) {
         log.info("Mensagem recebida na fila Parking Lot: {}", new String(message.getBody()));
-        // Mensagem mensagem = new Mensagem(new String(message.getBody()));
-        // mensagemBusiness.save(mensagem);
+        Mensagem mensagem = new Mensagem(new String(message.getBody()));
+        mensagemBusiness.save(mensagem);
+        return;
     }
 
 }
